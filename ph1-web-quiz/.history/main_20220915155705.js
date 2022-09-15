@@ -35,7 +35,7 @@ const question = [
     },
     {
         questionText : "先進テクノロジー活用企業と出遅れた企業の収益性の差はど<br>れくらいあると言われているでしょうか？",
-        img : "./img/quiz/img-quiz06.png",
+        img : "./assets-ph1-website-main 2/img/quiz/img-quiz06.png",
         select :["約2倍","約5倍","約11倍"],
         answer : 1,
         note : "Accenture Technology Vision 2021"
@@ -57,7 +57,7 @@ function create(questionNumber,questionText,selectArray){
     const noteHtml=shuffledQuestion[questionNumber-1].note ? `
         <cite class="cite">
         <div>
-        <img src="./img/icon/icon-note.svg">
+        <img src="./assets-ph1-website-main 2/img/icon/icon-note.svg">
         </div>
         ${shuffledQuestion[questionNumber-1].note}
         </cite>

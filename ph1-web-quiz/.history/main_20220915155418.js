@@ -10,32 +10,32 @@ const question = [
     },
     {
         questionText : "既存業界のビジネスと、先進的なテクノロジーを結びつけて<br>生まれた、新しいビジネスのことをなんと言うでしょう？",
-        img : "./img/quiz/img-quiz02.png",
+        img : "./assets-ph1-website-main 2/img/quiz/img-quiz02.png",
         select : ["INTECH","BIZZTECH"," X-TECH"],
         answer : 2
     },
     {
         questionText : "IoTとは何の略でしょう?",
-        img : "./img/quiz/img-quiz03.png",
+        img : "./assets-ph1-website-main 2/img/quiz/img-quiz03.png",
         select : ["Internet of Things","Integrate into Technology","Information on Tool"],
         answer : 0
     },
     {
         questionText : "日本が目指すサイバー空間とフィジカル空間を高度に融合させたシステムによって開かれる未来社会のことをなんと言うでしょうか？",
-        img : "./img/quiz/img-quiz04.png",
+        img : "./assets-ph1-website-main 2/img/quiz/img-quiz04.png",
         select : ["Society 5.0","CyPhy","SDGs"],
         answer : 0,
         note :"Society5.0 - 科学技術政策 - 内閣府"
     },
     {
         questionText : "イギリスのコンピューター科学者であるギャビン・ウッド氏<br>が提唱した、ブロックチェーン技術を活用した「次世代分散<br>型インターネット」のことをなんと言うでしょう？",
-        img : "./img/quiz/img-quiz05.png",
+        img : "./assets-ph1-website-main 2/img/quiz/img-quiz05.png",
         select :["Web3.0","NFT","メタバース"],
         answer : 0
     },
     {
         questionText : "先進テクノロジー活用企業と出遅れた企業の収益性の差はど<br>れくらいあると言われているでしょうか？",
-        img : "./img/quiz/img-quiz06.png",
+        img : "./assets-ph1-website-main 2/img/quiz/img-quiz06.png",
         select :["約2倍","約5倍","約11倍"],
         answer : 1,
         note : "Accenture Technology Vision 2021"
@@ -57,7 +57,7 @@ function create(questionNumber,questionText,selectArray){
     const noteHtml=shuffledQuestion[questionNumber-1].note ? `
         <cite class="cite">
         <div>
-        <img src="./img/icon/icon-note.svg">
+        <img src="./assets-ph1-website-main 2/img/icon/icon-note.svg">
         </div>
         ${shuffledQuestion[questionNumber-1].note}
         </cite>

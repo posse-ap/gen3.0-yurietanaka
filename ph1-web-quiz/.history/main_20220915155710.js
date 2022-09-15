@@ -57,7 +57,7 @@ function create(questionNumber,questionText,selectArray){
     const noteHtml=shuffledQuestion[questionNumber-1].note ? `
         <cite class="cite">
         <div>
-        <img src="./img/icon/icon-note.svg">
+        <img src="./assets-ph1-website-main 2/img/icon/icon-note.svg">
         </div>
         ${shuffledQuestion[questionNumber-1].note}
         </cite>
