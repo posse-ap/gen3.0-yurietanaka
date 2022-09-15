@@ -1,0 +1,185 @@
+/* header */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    position: fixed
+    background-color:white;
+}
+
+.header-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    text-decoration: none;
+
+
+
+}
+
+.header-logo{
+    margin-left: 20px;
+
+}
+
+.rightheader-word{
+    margin-right: 20px;
+    text-decoration: none;
+    color: gray;
+
+}
+
+.rightheader-icon{
+    margin-right: 20px;
+    margin-bottom: 5px;
+
+}
+
+/* hero */
+
+.heropage{
+position: relative;
+margin-bottom: 50px;
+
+}
+
+.hero-pic{
+
+}
+
+.hero{
+position:absolute;
+top: 140px;
+left: 70px;
+
+}
+
+.hero1{
+color: white;
+font-size: 20px;
+
+}
+
+.hero2{
+color: white;
+font-size: 50px;
+
+}
+
+/* quiz */
+.q-number{
+background-color: dodgerblue;
+border-radius: 5px;
+font-size: 30px;
+padding: 10px;
+margin: 10px;
+}
+.answer{
+background-color: red;
+border-radius: 5px;
+font-size: 30px;
+padding: 10px;
+margin-left: 10px;
+margin-bottom: 100px;
+}
+.q-pic{
+width: 300px;
+display: flex;
+justify-content: center;
+margin-left: 200px;
+margin-top: 50px;
+margin-bottom: 100px;
+}
+.buttons{
+display: flex;
+justify-content: space-between;
+margin-top:  30px ;
+margin-bottom: 50px;
+margin-left: 10px;
+}
+
+.incorrect-buttons{
+
+}
+
+.cite{
+margin-bottom: 10px;
+}
+
+
+/* footer */
+
+/* footer1 */ 
+.fixedlinelink{
+display: flex;
+align-items: center;
+background-color: chartreuse;
+width: 250px;
+padding: 20px;
+border-radius: 20px;
+margin: 20px;
+margin-left: 1500px;
+}
+.fixed-icon{
+width: 50px;
+margin: 10px;
+background: none;
+}
+.fixed-message{
+color: white;
+}
+.fixed-link{
+margin: 10px;
+color: white;
+}
+
+
+/* footer2 */
+.footer2{
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
+
+.footer2logo{
+display: flex;
+justify-content: center;
+width: 300px;
+margin-left: 750px;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.footer2moji{
+display: flex;
+justify-content: center;
+margin-bottom: 50px;
+}
+
+.footer2icon{
+display: flex;
+justify-content: center;
+margin-bottom: 50px;
+}
+
+.f2-twitter{
+
+}
+
+.f2-instagram{
+
+}
+
+/* footer3 */
+.copyright{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+
+}

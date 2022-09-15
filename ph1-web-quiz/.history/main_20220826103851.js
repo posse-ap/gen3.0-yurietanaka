@@ -1,0 +1,82 @@
+'use strict';
+
+const question = [
+    {
+        questionText : "日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか?",
+        select : ["約28万人", "約79万人","約183万人"],
+        answer :  1,
+    },
+    {
+        questionText : "既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？",
+        select : ["INTECH","BIZZTECH"," X-TECH"],
+        answer : 2,
+    },
+    {
+        questionText : "IoTとは何の略でしょう?",
+        select : ["Internet of Things","Integrate into Technology","Information on Tool"],
+        answer : 0,
+    },
+    {
+        questionText : "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
+        select : ["Society 5.0","CyPhy","SDGs"],
+        answer : 0,
+    },
+    {
+        questionText : "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
+        select :["Web3.0","NFT","メタバース"],
+        answer : 0,
+    },
+    {
+        questionText : "先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？",
+        select :["約2倍","約5倍","約11倍"],
+        answer : 1,
+    }
+]
+console.log{}
+
+// htmlの生成　問題の表示
+function create(questionNumber,questionText,selectArray){
+    let quiz = `<section data-quiz="1">
+    <h2 class="questions">
+        <span class="q-number">Q${questionNumber}</span>
+        <span class="q-passage">${questionText}</span>
+    </h2>
+    <img src="./assets-ph1-website-main 2/img/quiz/img-quiz0${questionNumber}.png"  class="q-pic">
+    <span class="answer">A</span>
+    <ul class="buttons">`
+    selectArray.forEach(function(value,index){
+        quiz +=`<li id="select_${questionNumber}_${index}">
+            <button class="btn">
+                ${value}
+            </button>
+        </li>`
+    } )
+    quiz +=`</ul>
+    <div>
+    <h3>正解！</h3>
+    <span></span>
+    </div>
+    </section>`
+    const quizpage = document.querySelector('.quizpage');
+    quizpage.insertAdjacentHTML('beforeend',quiz)
+}
+
+question.forEach(function(value,index){
+    create(index+1,value.questionText,value.select)
+    for(let i = 0; i < value.select.length;i++){
+        const selection = document.getElementById(`select_${index+1}_${i}`)
+        selection.addEventListener("click",function(){
+            if(i == value.answer){
+                console.log("正解")
+                // console.log(i)
+                // console.log(value.answer)
+                selection.firstElementChild.classList.add("correct-button")
+            }else{
+                console.log("不正解")
+                // console.log(i)
+                // console.log(value.answer)
+                selection.firstElementChild.classList.add("incorrect-button")
+            }
+        })
+    }
+})
