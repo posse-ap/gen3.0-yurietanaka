@@ -1,0 +1,133 @@
+/* .l-header {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.l-header ul li{
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+  color: gray;
+  text-decoration-line: none;
+
+}
+
+.header-list {
+  display: flex;
+  justify-content: center;
+  color: gray;
+  
+}
+
+li{
+  display: flex;
+  list-style-type: none;
+  color: gray;
+}
+
+.logo img{
+  margin-left: 20px;
+} */
+
+header{
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  height: 80px;
+
+}
+
+.logo{
+  margin-left: 30px;
+}
+
+.nav-list{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+.header-nav1link{
+  text-decoration: none;
+  color: gray;
+  margin-right: 30px;
+
+}
+
+.header-pic{
+  width: 35px;
+  height: 35px;
+  border: 1px solid gray ;
+  border-radius: 50%;
+  padding: 1px;
+  /* padding-left: 8px; */
+  
+}
+
+.header-pic-img {
+  padding-left: 5px;
+}
+
+.top1{
+  /* margin-top: 85px; */
+  display: flex;
+  align-items: center;
+}
+
+.top1left{
+  margin-top: 100px;
+  background-color: gainsboro;
+}
+
+.blue{
+  color: blue;
+}
+
+.top1moji{
+  font-size: 50px;
+}
+
+.pic1{
+  width: 300px;
+  /* ↑は効いてる */
+  /* 画像を右寄せにしたい　＊/
+    
+  /* margin-right: 0px;
+  margin-left: auto;
+  display: block;  */
+
+  /* display: flex;
+  justify-content: flex-end; */
+
+}
+
+.h2{
+  display: flex;
+  ju
+}
+
+.pic2{
+  width: 200px;
+}
+
+
+
+.footer{
+position: absolute;
+width: 1440px;
+height: 355px;
+left: 0px;
+top: 1875px;
+}
+
+.p-footer__copyright{
+display: flex;
+justify-content: center;
+}

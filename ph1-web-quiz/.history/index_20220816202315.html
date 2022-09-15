@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ITクイズ | POSSE 初めてのWeb制作</title>
+
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="./main.js"></script>
+      
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+  <header class="header">
+            <div class="header-logo"><img src="./assets-ph1-website-main 2/img/logo.svg" alt="POSSE"></div>
+
+            <ul class="header-item">
+                <li class="rightheader-word">
+                    <a href="https://posse-ap.github.io/sample-ph1-website/">トップページ</a>
+                </li>
+                <li class="rightheader-word">
+                    <a href="https://posse-ap.github.io/sample-ph1-website/quiz/" >クイズ</a>
+                </li>
+                
+                <li class="rightheader-icon">
+                <img src="assets-ph1-website-main 2/img/icon/icon-twitter.svg">
+                <a href="https://twitter.com/posse_program"></a>
+                </li>
+                
+                <li class="rightheader-icon">
+                <img src="./assets-ph1-website-main 2/img/icon/icon-instagram.svg">
+                <a href="https://www.instagram.com/posse_programming/"></a>
+                </li>
+            </ul>
+        </header>
+
+
+
+
+
+  <main class="main">
+
+      <div class="heropage">
+          
+        <img src="./assets-ph1-website-main 2/img/quiz/bg-hero.jpg" class="hero-pic">
+        
+        <h1 class="hero">
+              <span class="hero1">POSSE課題</span>
+              <br>
+              <br>
+              
+              <span class="hero2">ITクイズ</span>
+        </h1>
+
+      </div>
+          
+        
+                    <h2 class="questions">
+                    <span class="q-number">Q1</span>
+                    <span >日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？</span>
+                    </h2>
+
+                    <img src="./assets-ph1-website-main 2/img/quiz/img-quiz01.png" class="q-pic">
+                    </figure>
+                    <span class="answer">A</span>
+
+                    <ul class="buttons">
+                      <li class="selectbox" id="answerlist_1_1" onclick="check(1, 1, 2)">
+                        <button class="" data-answer="0">
+                        約28万人
+                        </button>
+                    </li>
+                      <li class="selectbox" id="answerlist_1_2" onclick="check(1,2,2)">
+                        <button class="" data-answer="1">
+                        約79万人
+                        </button>
+                    </li>
+                      <li class="selectbox"id="answerlist_1_3" onclick="check(1,3,2)">
+                        <button  data-answer="2">
+                        約183万人
+                        </button>
+                    </li>
+                    </ul>
+
+                <cite class="cite">
+                  経済産業省 2019年3月 － IT 人材需給に関する調査
+                </cite>
+                </section>
+
+        
+                <section data-quiz="1">
+                    <h2 class="questions">
+                    <span class="q-number">Q2</span>
+                    <span class="">既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？</span>
+                  </h2>
+                    <img src="./assets-ph1-website-main 2/img/quiz/img-quiz02.png"  class="q-pic">
+                  <span class="answer">A</span>
+                  <ul class="buttons">
+                    <li>
+                      <button data-answer="0">
+                        INTECH
+                      </button>
+                    </li>
+
+                    <li>
+                      <button data-answer="1">
+                        BIZZTECH<i class=""></i>
+                      </button>
+                    </li>
+
+                    <li>
+                      <button  data-answer="2">
+                        X-TECH<i class=""></i>
+                      </button>
+                    </li>
+                  </ul>
+              </section>
+        
+              <section data-quiz="2">
+                  <h2 class="questions">
+                    <span class="q-number">Q3</span>
+                    <span class="">IoTとは何の略でしょう？</span>
+                  </h2>
+                    <img src="./assets-ph1-website-main 2/img/quiz/img-quiz03.png"  class="q-pic">
+                  <span class="answer">A</span>
+                  <ul class="buttons">
+                    <li>
+                      <button data-answer="0">
+                        Internet of Things
+                      </button>
+                    </li>
+                    <li >
+                      <button data-answer="1">
+                        Integrate into Technology
+                      </button>
+                    </li>
+                      <button  data-answer="2">
+                        Information on Tool
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+        
+              <section  data-quiz="3">
+                  <h2 class="questions">
+                    <span class="q-number">Q4</span>
+                    <span >イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？</span>
+                  </h2>
+                    <img src="./assets-ph1-website-main 2/img/quiz/img-quiz04.png"  class="q-pic">
+                  <span class="answer">A</span>
+                  <ul class="buttons">
+                    <li>
+                      <button class="" dataAnswer="0">
+                        Society 5.0
+                      </button>
+                    </li>
+                    <li >
+                      <button class="" dataAnswer="1">
+                        CyPhy<i class=""></i>
+                      </button>
+                    </li>
+                    <li class="">
+                      <button class="" dataAnswer="2">
+                        SDGs<i class=""></i>
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="">
+                    <p class=""></p>
+                    <p class="">
+                      <span class=""></span>
+                      <span class=""></span>
+                    </p>
+                  </div>
+                </div>
+                <cite class="cite">
+                Society5.0 - 科学技術政策 - 内閣府
+                </cite>
+              </section>
+        
+              <section class="" data-quiz="4">
+                <div class="">
+                  <h2 class="questions">
+                    <span class="q-number">Q5</span>
+                    <span class="">イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？</span>
+                  </h2>
+                  <figure class="">
+                    <img src="./assets-ph1-website-main 2/img/quiz/img-quiz05.png" alt="" class="q-pic">
+                  </figure>
+                </div>
+                <div class="">
+                  <span class="answer">A</span>
+                  <ul class="buttons">
+                    <li class="">
+                      <button class="" dataAnswer="0">
+                        Web3.0<i class=""></i>
+                      </button>
+                    </li>
+                    <li class="">
+                      <button class="" dataAnswer="1">
+                        NFT<i class=""></i>
+                      </button>
+                    </li>
+                    <li class="">
+                      <button class="" dataAnswer="2">
+                        メタバース<i class=""></i>
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="">
+                    <p class=""></p>
+                    <p class="">
+                      <span class=""></span>
+                      <span class=""></span>
+                    </p>
+                  </div>
+                </div>
+              </section>
+        
+              <section class="" data-quiz="5">
+                <div class="">
+                  <h2 class="questions">">
+                    <span class="q-number">Q6</span>
+                    <span class="">先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？</span>
+                  </h2>
+                  <figure class="">
+                    <img src="./assets-ph1-website-main 2/img/quiz/img-quiz06.png" alt="" class="q-pic">
+                  </figure>
+                </div>
+                <div class="">
+                  <span class="answer">A</span>
+                  <ul class="buttons">
+                    <li class="">
+                      <button class="" dataAnswer="0">
+                        約2倍<i class=""></i>
+                      </button>
+                    </li>
+                    <li class="">
+                      <button class="" dataAnswer="1">
+                        約5倍<i class=""></i>
+                      </button>
+                    </li>
+                    <li class="">
+                      <button class="" dataAnswer="2">
+                        約11倍<i class=""></i>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <cite class="">
+                  <i class=""></i>Accenture Technology Vision 2021
+                </cite>
+              </section>
+            </div>
+        </main>
+
+
+
+
+
+        <div class="">
+            <!-- <div class="">
+                    <img src="./assets-ph1-website-main 2/img/icon/icon-line.svg">
+                    <h2 class=""><i class=""></i>POSSE 公式LINE</h2>
+                    <div class="">
+                    <p>公式LINEにてご質問を随時受け付けております。<br>詳細やPOSSE最新情報につきましては、公式LINEにてお知らせ致しますので<br>下記ボタンより友達追加をお願いします！</p>
+                    </div>
+                    <div class="">
+                    <img= href="https://line.me/R/ti/p/@651htnqp?from=page" class="">LINE追加<i class=""></i></a>
+                    <img src="./assets-ph1-website-main 2/img/icon/icon-link-gray-dark.svg">
+                    </div>
+            </div> -->
+        </div>
+
+
+
+
+
+        <footer class="footer">
+
+<hr>
+
+            <div class="footer2">
+
+                <img src="./assets-ph1-website-main 2/img/logo.svg" class="footer2logo" >
+
+                <a href="https://posse-ap.com/"class="footer2moji">POSSE公式サイト</a>
+            
+                <div class="">
+
+                  <ul class="footer2icon">
+                    <li class="f2-twitter">
+                    <a href="https://twitter.com/posse_program">
+                    <img src="./assets-ph1-website-main 2/img/icon/icon-twitter.svg">
+                    </a>
+                    </li>
+
+                    <li class="f2-instagram">
+                    <a href="https://www.instagram.com/posse_programming/"  class="" ><img src="./assets-ph1-website-main 2/img/icon/icon-instagram.svg">
+                    </a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+
+<hr>
+
+            <div class="copyright">
+                <small lang="en">©︎2022 POSSE</small>
+            </div>
+        </footer>
+
+
+        <ul class="fixedlinelink">
+
+          <li class="fixed-icon">
+            <img src="./assets-ph1-website-main 2/img/icon/icon-line.svg" >
+            <a herf="https://line.me/R/ti/p/@651htnqp?from=page"> </a>
+          </li>   
+          
+          <li class="fixed-message">  
+            POSSE公式LINEで
+            <br>
+            最新情報をGET!
+          </li>
+
+          <li class="fixed-link">
+            <img src="./assets-ph1-website-main 2/img/icon/icon-link-gray-dark.svg" >
+          </li>
+        
+        </ul>
+    
+      <script scr="./main.js"></script>
+    </body>
+    
+    
+
+</html>
