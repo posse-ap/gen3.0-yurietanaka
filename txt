@@ -1,2 +1,6 @@
 option+command+K ブックマーク
 option+command+L ブックマークしたところに飛ぶ
+
+
+
+aaaaaaaa
