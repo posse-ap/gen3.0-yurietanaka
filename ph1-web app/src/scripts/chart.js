@@ -5,97 +5,97 @@ Chart.register(ChartDataLabels);
 
 {
   //棒グラフここから
-  const STUDYING_TIME_DATA = "http://posse-task.anti-pattern.co.jp/1st-work/study_time.json";
-  fetch(STUDYING_TIME_DATA)
-    .then((response) => {
-      return response.json();
-    })
-    .then((jsonData) => {
-      createBarChart(jsonData);
-    });
+  // const STUDYING_TIME_DATA = "http://posse-task.anti-pattern.co.jp/1st-work/study_time.json";
+  // fetch(STUDYING_TIME_DATA)
+  //   .then((response) => {
+  //     return response.json();
+  //   })
+  //   .then((jsonData) => {
+  //     createBarChart(jsonData);
+  //   });
 
-  function createBarChart(jsonData) {
-    const convertedDayData = jsonData.map((d) => {
-      return d.day;
-    });
-    const convertedTimeData = jsonData.map((d) => {
-      return d.time;
-    });
+  // function createBarChart(jsonData) {
+  //   const convertedDayData = jsonData.map((d) => {
+  //     return d.day;
+  //   });
+  //   const convertedTimeData = jsonData.map((d) => {
+  //     return d.time;
+  //   });
 
-    const bar_ctx = document.getElementById("js-bar-chart").getContext("2d");
-    const gradient_desktop = bar_ctx.createLinearGradient(0, 0, 0, 300);
-    const gradient_mobile = bar_ctx.createLinearGradient(0, 0, 0, 100);
-    gradient_desktop.addColorStop(0, "#3ccfff");
-    gradient_desktop.addColorStop(1, "#0f71bc");
-    gradient_mobile.addColorStop(0, "#3ccfff");
-    gradient_mobile.addColorStop(1, "#0f71bc");
+  //   const bar_ctx = document.getElementById("js-bar-chart").getContext("2d");
+  //   const gradient_desktop = bar_ctx.createLinearGradient(0, 0, 0, 300);
+  //   const gradient_mobile = bar_ctx.createLinearGradient(0, 0, 0, 100);
+  //   gradient_desktop.addColorStop(0, "#3ccfff");
+  //   gradient_desktop.addColorStop(1, "#0f71bc");
+  //   gradient_mobile.addColorStop(0, "#3ccfff");
+  //   gradient_mobile.addColorStop(1, "#0f71bc");
 
-    const barChart = new Chart(bar_ctx, {
-      type: "bar",
-      data: {
-        labels: convertedDayData,
-        datasets: [
-          {
-            data: convertedTimeData,
-            barPercentage: 0.6,
-            backgroundColor: screen.width > 520 ? gradient_desktop : gradient_mobile,
-            borderRadius: 50,
-            borderSkipped: false,
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            grid: {
-              display: false,
-              drawBorder: false,
-              //borderを消す
-            },
-            ticks: {
-              maxRotation: 0,
-              minRotation: 0,
-              //回転させない
-              min: 1,
-              max: 30,
-              color: "#97b9d1",
-              autoSkip: false,
-              //画面を小さくしても、非表示させない
-              callback: function (value, index) {
-                return index % 2 === 1 ? this.getLabelForValue(value) : "";
-              },
-            },
-          },
-          y: {
-            grid: {
-              display: false,
-              drawBorder: false,
-              //borderを消す
-            },
-            max: 8,
-            min: 0,
-            ticks: {
-              stepSize: 2,
-              callback: function (value) {
-                return value + "h";
-              },
-              color: "#97b9d1",
-            },
-          },
-        },
-        plugins: {
-          legend: {
-            display: false,
-          },
-          datalabels: {
-            display: false,
-          },
-        },
-      },
-    });
-  }
+  //   const barChart = new Chart(bar_ctx, {
+  //     type: "bar",
+  //     data: {
+  //       labels: convertedDayData,
+  //       datasets: [
+  //         {
+  //           data: convertedTimeData,
+  //           barPercentage: 0.6,
+  //           backgroundColor: screen.width > 520 ? gradient_desktop : gradient_mobile,
+  //           borderRadius: 50,
+  //           borderSkipped: false,
+  //         },
+  //       ],
+  //     },
+  //     options: {
+  //       responsive: true,
+  //       maintainAspectRatio: false,
+  //       scales: {
+  //         x: {
+  //           grid: {
+  //             display: false,
+  //             drawBorder: false,
+  //             //borderを消す
+  //           },
+  //           ticks: {
+  //             maxRotation: 0,
+  //             minRotation: 0,
+  //             //回転させない
+  //             min: 1,
+  //             max: 30,
+  //             color: "#97b9d1",
+  //             autoSkip: false,
+  //             //画面を小さくしても、非表示させない
+  //             callback: function (value, index) {
+  //               return index % 2 === 1 ? this.getLabelForValue(value) : "";
+  //             },
+  //           },
+  //         },
+  //         y: {
+  //           grid: {
+  //             display: false,
+  //             drawBorder: false,
+  //             //borderを消す
+  //           },
+  //           max: 8,
+  //           min: 0,
+  //           ticks: {
+  //             stepSize: 2,
+  //             callback: function (value) {
+  //               return value + "h";
+  //             },
+  //             color: "#97b9d1",
+  //           },
+  //         },
+  //       },
+  //       plugins: {
+  //         legend: {
+  //           display: false,
+  //         },
+  //         datalabels: {
+  //           display: false,
+  //         },
+  //       },
+  //     },
+  //   });
+  // }
   //棒グラフここまで
 
   //学習言語ここから
@@ -112,6 +112,7 @@ Chart.register(ChartDataLabels);
 
   function createLanguagesChart(jsonData) {
     const convertedLanguagesData = Object.keys(jsonData[0]);
+    console.log(convertedLanguagesData);
     const convertedRatioDataOfLanguages = Object.values(jsonData[0]);
     const doughnut1_ctx = document.getElementById("js-doughnut1").getContext("2d");
     const doughnutChart1 = new Chart(doughnut1_ctx, {
