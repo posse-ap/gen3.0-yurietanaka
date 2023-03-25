@@ -60,7 +60,38 @@ $barData = json_encode($barData);
 
 // $total_sumに合計の時間が入る
 // print_r($today_sum)
-print_r($barData)
+
+$stmt = $dbh->query("SELECT languages_id, SUM(hour) as total_hour FROM stuy_logs GROUP BY languages_id");
+$data = $stmt->fetchAll();
+$hours = array();
+foreach ($data as $row) {
+  $hours[$row['languages_id']] = $row['total_hour'];
+}
+
+// 存在しないlanguage_idに対しては0をセットする
+for ($i = 1; $i <= 8; $i++) {
+  if (!isset($hours[$i])) {
+    $hours[$i] = 0;
+  }
+}
+$hours_str = implode(",", $hours);
+
+
+$stmt = $dbh->query("SELECT contents_id, SUM(hour) as total_hour FROM stuy_logs GROUP BY contents_id");
+$data = $stmt->fetchAll();
+$contents_hours = array();
+foreach ($data as $row) {
+  $contents_hours[$row['contents_id']] = $row['total_hour'];
+}
+
+// 存在しないlanguage_idに対しては0をセットする
+for ($i = 1; $i <= 8; $i++) {
+  if (!isset($contents_hours[$i])) {
+    $contents_hours[$i] = 0;
+  }
+}
+$contents_hours_str = implode(",", $contents_hours);
+print_r($contents_hours_str);
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +113,6 @@ print_r($barData)
   <script src="./scripts/calender.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0" defer></script>
-  <script src="./scripts/chart.js" defer></script>
   <title>ph1-webapp</title>
 </head>
 
@@ -132,7 +162,7 @@ print_r($barData)
           <div class="p-main__time__chart">
             <div class="p-main__time__chart__container">
               <canvas id="js-bar-chart"></canvas>
-              <script>
+              <!-- <script>
                 createBarChart(<?php echo $barData ?>)
 
                 function createBarChart(jsonData) {
@@ -216,7 +246,7 @@ print_r($barData)
                     },
                   });
                 }
-              </script>
+              </script> -->
             </div>
           </div>
         </div>
@@ -445,6 +475,109 @@ print_r($barData)
     <!-- modalここまで -->
   </main>
   <!-- mainここまで -->
+  <script>
+    const bgColors = ["#0345ec", "#0f71bd", "#20bdde", "#3ccefe", "#b29ef3", "#6d46ec", "#4a17ef", "#3105c0"];
+
+    const STUDYING_LANGUAGES_DATA = "http://posse-task.anti-pattern.co.jp/1st-work/study_language.json";
+    fetch(STUDYING_LANGUAGES_DATA)
+      .then((response) => {
+        return response.json();
+      })
+      .then((jsonData) => {
+        createLanguagesChart(jsonData);
+      });
+
+    function createLanguagesChart(jsonData) {
+      const convertedLanguagesData = Object.keys(jsonData[0]);
+      const convertedRatioDataOfLanguages = Object.values(jsonData[0]);
+      const doughnut1_ctx = document.getElementById("js-doughnut1").getContext("2d");
+      const doughnutChart1 = new Chart(doughnut1_ctx, {
+        type: "doughnut",
+        data: {
+          labels: convertedLanguagesData,
+          datasets: [{
+            data: [<?php echo $hours_str; ?>],
+            backgroundColor: bgColors,
+            datalabels: {
+              color: "#ffffff",
+              formatter: function(value, context) {
+                return value + "%";
+              },
+            },
+            hoverOffset: 4,
+          }, ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+      });
+      const languagesLegendContainer = document.getElementById("js-languages-legends");
+      createLegend(convertedLanguagesData, languagesLegendContainer);
+    }
+    //学習言語ここまで
+    //学習コンテンツここから
+    const STUDYING_CONTENTS_DATA = "http://posse-task.anti-pattern.co.jp/1st-work/study_contents.json";
+    fetch(STUDYING_CONTENTS_DATA)
+      .then((response) => {
+        return response.json();
+      })
+      .then((jsonData) => {
+        createContentsChart(jsonData);
+      });
+
+    function createContentsChart(jsonData) {
+      const convertedContentsData = Object.keys(jsonData[0]);
+      const convertedRatioDataOfContents = Object.values(jsonData[0]);
+      const doughnut2_ctx = document.getElementById("js-doughnut2").getContext("2d");
+      const doughnutChart2 = new Chart(doughnut2_ctx, {
+        type: "doughnut",
+        data: {
+          labels: convertedContentsData,
+          datasets: [{
+            data: [<?php echo $contents_hours_str ?>],
+            backgroundColor: bgColors,
+            datalabels: {
+              color: "#ffffff",
+              formatter: function(value, context) {
+                return value + "%";
+              },
+            },
+            hoverOffset: 4,
+          }, ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+      });
+      const contentsLegendContainer = document.getElementById("js-contents-legends");
+      createLegend(convertedContentsData, contentsLegendContainer);
+    }
+    //学習コンテンツここまで
+
+    function createLegend(data, appendArea) {
+      for (let i = 0; i < data.length; i++) {
+        const li = document.createElement("li");
+        if (data[i] === "その他") {
+          li.innerHTML = `<div style="background-color:${bgColors[i]}"></div><span>情報システム基礎知識(${data[i]})</span>`;
+        } else {
+          li.innerHTML = `<div style="background-color:${bgColors[i]}"></div><span>${data[i]}</span>`;
+        }
+        appendArea.appendChild(li);
+      }
+    }
+  </script>
 </body>
 
 </html>

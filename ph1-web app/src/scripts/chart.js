@@ -112,7 +112,6 @@ Chart.register(ChartDataLabels);
 
   function createLanguagesChart(jsonData) {
     const convertedLanguagesData = Object.keys(jsonData[0]);
-    console.log(convertedLanguagesData);
     const convertedRatioDataOfLanguages = Object.values(jsonData[0]);
     const doughnut1_ctx = document.getElementById("js-doughnut1").getContext("2d");
     const doughnutChart1 = new Chart(doughnut1_ctx, {
